@@ -12,23 +12,7 @@ const multer  = require('multer');
 const { storage } = require('../cloudConfig.js'); // Import the storage configuration from cloudinary.js
 const upload = multer({ storage });
 
-// //search route
-// router.get('/search', async (req, res) => {
-//     const query = req.query.q;
-//     console.log("Search query:", query);
-//     try {
-//         const listings = await Listing.find({
-//             $or: [
-//                 { title: { $regex: query, $options: 'i' } },
-//                 { location: { $regex: query, $options: 'i' } }
-//             ]
-//         });
-//         res.render('listings/searchResults', { listings, query });
-//     } catch (err) {
-//         console.error(err);
-//         res.redirect('/');
-//     }
-// });
+
 
 
 router.route('/')

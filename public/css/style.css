@@ -147,3 +147,24 @@ body{
 /* .review-card{
     border: rgb(11, 0, 0) !important;
 } */
+
+/* .btn-search {
+    background-color: #fe424d;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+}
+
+.btn-search:hover {
+    background-color: #fe424d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+
+}
+
+.search-inp {
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ced4da;
+} */
