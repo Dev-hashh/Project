@@ -1,78 +1,65 @@
 require('dotenv').config({ path: '../.env' });
 
 const mongoose = require('mongoose');
-const initData= require('./data.js');
+const initData = require('./data.js');
 const Listing = require('../models/listing.js');
+const User = require('../models/user.js'); // import your User model
 
-const dbUrl = process.env.ATLASDB_URL ;
+// MongoDB connection URL from environment variables
+const dbUrl = process.env.ATLASDB_URL;
+const dbUrlLocal = "mongodb://127.000.1:27017/wanderlust";
 
 if (!dbUrl) {
-    console.error("❌ Error: ATLASDB_URL not found in .env");
-    process.exit(1);
+    console.warn("⚠️ Warning: ATLASDB_URL not found in .env. Using local DB.");
 }
 
-
-// main()
-// .then(() => {
-//     console.log("Connected to MongoDB");
-    
-// })
-// .catch((err) => {
-//     console.error("Error connecting to MongoDB:", err);
-// });
-
-// async function main(){
-//     await mongoose.connect(dbUrl);
-// }
-
-// const initDB = async () => {
-//     try {
-        
-//         // Clear existing listings
-//         await Listing.deleteMany({});
-
-//         initData.data = initData.data.map((obj)=>({...obj, owner: "6864015c08546a54e575e9d1"}));   // Assuming you have a user with this ID to set as owner
-//         // Insert initial data
-//         await Listing.insertMany(initData.data);
-
-//         console.log("Database initialized with sample data");
-//     } catch (error) {
-//         console.error("Error initializing database:", error);
-//     } 
-// }
-
-// initDB();
-
-// Connect to MongoDB Atlas
+// Function to connect to MongoDB
 const connectDB = async () => {
+    const connectionUrl =  dbUrl || dbUrlLocal; // Use Atlas if available, else local
     try {
-        await mongoose.connect(dbUrl, { connectTimeoutMS: 30000 });
-        console.log("✅ Connected to MongoDB Atlas");
+        await mongoose.connect(connectionUrl, { connectTimeoutMS: 30000 });
+        console.log(`✅ Connected to MongoDB: ${connectionUrl === dbUrlLocal ? 'Local' : 'Atlas'}`);
     } catch (err) {
         console.error("❌ MongoDB connection error:", err);
         process.exit(1);
     }
 };
 
-// Seed the database
+// Function to seed the database
 const initDB = async () => {
     try {
         // Clear existing listings
         console.log("🗑️ Clearing existing listings...");
         await Listing.deleteMany({});
         
+        // 1. Fetch all existing users
+        const users = await User.find({});
+        
+        // 2. Critical Check: Ensure users exist before proceeding
+        if (users.length === 0) {
+            console.error("❌ ERROR: No users found in the database. Please register a user first.");
+            console.error("Listings cannot be created without valid owners. Exiting seed process.");
+            return; 
+        }
 
-        // Add owner field to each item
-        console.log("📦 Preparing initial data...");
-        initData.data = initData.data.map((obj) => ({
-            ...obj,
-            owner: "687fd1c8eb12b82e29bdfbdf", // Replace with actual user ID if needed
-            geometry: obj.geometry
-        }));
+        // Add owner field to each item dynamically
+        console.log(`📦 Preparing initial data for ${initData.data.length} listings with dynamic owners...`);
 
-        // Insert new data
-        await Listing.insertMany(initData.data);
-        console.log("🌱 Database seeded with initial data");
+        const listingsWithOwner = initData.data.map((obj) => {
+            // Select a random user from the list
+            const randomUser = users[Math.floor(Math.random() * users.length)];
+            return {
+                ...obj,
+                // Assign the Mongoose ObjectId of the user
+                owner: randomUser._id, 
+                geometry: obj.geometry
+            };
+        });
+        
+        // 3. Insert the corrected data (only once)
+        await Listing.insertMany(listingsWithOwner);
+
+        console.log("🌱 Database seeded with initial data and valid owners.");
 
     } catch (error) {
         console.error("❌ Error seeding database:", error);
@@ -94,5 +81,6 @@ const runSeeder = async () => {
 };
 
 runSeeder();
+
 
 // (203.81.242.187/32) 

@@ -372,7 +372,419 @@ const sampleListings = [
     location: "Costa Rica",
     country: "Costa Rica",
     geometry: { type: "Point", coordinates: [-84.0739, 9.7489] }
-  }
+  },
+  // -------------------------
+// TRENDING (5)
+// -------------------------
+{
+  title: "Luxury Overwater Villa in Maldives",
+  description: "Stay in an overwater villa with turquoise lagoon views. A trending choice for luxury seekers.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 5000,
+  location: "Malé",
+  country: "Maldives",
+  geometry: { type: "Point", coordinates: [73.2207, 4.1755] }
+},
+{
+  title: "Desert Dome in Dubai",
+  description: "Sleep under the stars in a luxury glass dome in the Arabian Desert. Instagram-worthy and trending.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 4200,
+  location: "Dubai",
+  country: "UAE",
+  geometry: { type: "Point", coordinates: [55.2962, 25.276987] }
+},
+{
+  title: "Santorini Cliffside Suite",
+  description: "Enjoy iconic sunsets from a whitewashed suite perched on Santorini’s cliffs.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 3100,
+  location: "Oia",
+  country: "Greece",
+  geometry: { type: "Point", coordinates: [25.375, 36.461] }
+},
+{
+  title: "Glass Igloo in Finland",
+  description: "Watch the Northern Lights from the comfort of a glass igloo in Lapland.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 3500,
+  location: "Rovaniemi",
+  country: "Finland",
+  geometry: { type: "Point", coordinates: [25.7294, 66.5039] }
+},
+{
+  title: "Floating Bungalow in Thailand",
+  description: "Stay on a floating villa surrounded by the emerald waters of Khao Sok Lake.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 1400,
+  location: "Khao Sok",
+  country: "Thailand",
+  geometry: { type: "Point", coordinates: [98.523, 8.933] }
+},
+
+// -------------------------
+// BEACHES (5)
+// -------------------------
+{
+  title: "Secluded Beach House in Costa Rica",
+  description: "Escape to a secluded beach house on the Pacific coast of Costa Rica. Surf, relax, and unwind.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 1800,
+  location: "Santa Teresa",
+  country: "Costa Rica",
+  geometry: { type: "Point", coordinates: [-85.085, 9.6619] }
+},
+{
+  title: "Beachfront Villa in Bali",
+  description: "Wake up to waves crashing right outside your door in this luxury beachfront villa.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 2000,
+  location: "Seminyak",
+  country: "Indonesia",
+  geometry: { type: "Point", coordinates: [115.145, -8.705] }
+},
+{
+  title: "Caribbean Bungalow in Bahamas",
+  description: "A private bungalow steps away from the soft white sands of the Bahamas.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 2500,
+  location: "Nassau",
+  country: "Bahamas",
+  geometry: { type: "Point", coordinates: [-77.3554, 25.047984] }
+},
+{
+  title: "Surf Shack in Australia",
+  description: "Cozy surf shack near Byron Bay, perfect for surfers and beach lovers.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 900,
+  location: "Byron Bay",
+  country: "Australia",
+  geometry: { type: "Point", coordinates: [153.613, -28.647] }
+},
+{
+  title: "Hut on the Goa Coast",
+  description: "Stay in a rustic beach hut with hammocks and palm trees swaying in the breeze.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 700,
+  location: "Palolem",
+  country: "India",
+  geometry: { type: "Point", coordinates: [74.02, 15.009] }
+},
+
+// -------------------------
+// MOUNTAINS (5)
+// -------------------------
+{
+  title: "Swiss Alps Chalet",
+  description: "A cozy wooden chalet nestled in the heart of the Swiss Alps, ideal for skiing and mountain adventures.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 2200,
+  location: "Zermatt",
+  country: "Switzerland",
+  geometry: { type: "Point", coordinates: [7.7491, 46.0207] }
+},
+{
+  title: "Himalayan Cottage in Manali",
+  description: "Stay in a wooden cottage with snowy peaks and apple orchards all around.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 600,
+  location: "Manali",
+  country: "India",
+  geometry: { type: "Point", coordinates: [77.17, 32.24] }
+},
+{
+  title: "Rocky Mountains Cabin",
+  description: "Rustic cabin in Colorado’s Rockies, perfect for hiking, skiing, and cozy nights.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1500048993959-dc953a3def71?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 1000,
+  location: "Aspen",
+  country: "USA",
+  geometry: { type: "Point", coordinates: [-106.82, 39.19] }
+},
+{
+  title: "Patagonia Lodge",
+  description: "Adventure lodge in Patagonia with views of glaciers and dramatic peaks.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1500048993959-dc953a3def71?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 1300,
+  location: "El Chaltén",
+  country: "Argentina",
+  geometry: { type: "Point", coordinates: [-72.9, -49.33] }
+},
+{
+  title: "Japanese Alps Ryokan",
+  description: "Traditional ryokan with hot springs and snow-capped peaks in Nagano.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1499696010181-9a8e72f19bf8?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 1100,
+  location: "Nagano",
+  country: "Japan",
+  geometry: { type: "Point", coordinates: [138.18, 36.65] }
+},
+
+// -------------------------
+// STAYS (5)
+// -------------------------
+{
+  title: "Modern Loft in New York City",
+  description: "Enjoy a stylish loft apartment in downtown Manhattan with skyline views.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 3000,
+  location: "Manhattan",
+  country: "USA",
+  geometry: { type: "Point", coordinates: [-74.006, 40.7128] }
+},
+{
+  title: "Villa in Los Angeles Hills",
+  description: "Stay in a luxury villa with infinity pool overlooking the Hollywood sign.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 4500,
+  location: "Los Angeles",
+  country: "USA",
+  geometry: { type: "Point", coordinates: [-118.2437, 34.0522] }
+},
+{
+  title: "Riad in Marrakech",
+  description: "Traditional Moroccan riad with courtyard fountains and intricate designs.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 800,
+  location: "Marrakech",
+  country: "Morocco",
+  geometry: { type: "Point", coordinates: [-7.9811, 31.6295] }
+},
+{
+  title: "Lakehouse in Canada",
+  description: "Peaceful stay in a modern lakehouse surrounded by Canadian forests.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1505691723518-36a4c2a12ecb?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 1200,
+  location: "Ontario",
+  country: "Canada",
+  geometry: { type: "Point", coordinates: [-79.3832, 43.6532] }
+},
+{
+  title: "Tokyo Capsule Stay",
+  description: "Minimalist capsule hotel stay in Tokyo, a unique Japanese experience.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1499696010181-9a8e72f19bf8?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 200,
+  location: "Tokyo",
+  country: "Japan",
+  geometry: { type: "Point", coordinates: [139.6917, 35.6895] }
+},
+
+// -------------------------
+// ICONIC CITIES (5)
+// -------------------------
+{
+  title: "Parisian Apartment near Eiffel Tower",
+  description: "Stay in a charming apartment just steps away from the Eiffel Tower.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 2500,
+  location: "Paris",
+  country: "France",
+  geometry: { type: "Point", coordinates: [2.3522, 48.8566] }
+},
+{
+  title: "Penthouse in Dubai Marina",
+  description: "Experience luxury in Dubai’s famous skyline with sea views.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 4000,
+  location: "Dubai",
+  country: "UAE",
+  geometry: { type: "Point", coordinates: [55.2962, 25.276987] }
+},
+{
+  title: "Flat near Big Ben",
+  description: "Live in central London with Big Ben and the Thames at your doorstep.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 2700,
+  location: "London",
+  country: "UK",
+  geometry: { type: "Point", coordinates: [-0.1276, 51.5072] }
+},
+{
+  title: "Apartment in Rome’s Historic Center",
+  description: "Stay in a centuries-old building just minutes from the Colosseum.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 2300,
+  location: "Rome",
+  country: "Italy",
+  geometry: { type: "Point", coordinates: [12.4964, 41.9028] }
+},
+{
+  title: "Skyline Condo in Singapore",
+  description: "Modern condo with breathtaking views of Marina Bay Sands and Gardens by the Bay.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1505691723518-36a4c2a12ecb?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 3100,
+  location: "Singapore",
+  country: "Singapore",
+  geometry: { type: "Point", coordinates: [103.8198, 1.3521] }
+},
+
+// -------------------------
+// CAMPING (5)
+// -------------------------
+{
+  title: "Lakeside Camping in Banff",
+  description: "Camp under the stars by the pristine lakes of Banff National Park.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1502920514313-52581002a659?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 300,
+  location: "Banff",
+  country: "Canada",
+  geometry: { type: "Point", coordinates: [-115.5708, 51.1784] }
+},
+{
+  title: "Desert Camping in Wadi Rum",
+  description: "Sleep in Bedouin tents surrounded by dramatic sandstone formations.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 250,
+  location: "Wadi Rum",
+  country: "Jordan",
+  geometry: { type: "Point", coordinates: [35.419, 29.532] }
+},
+{
+  title: "Safari Camping in Kenya",
+  description: "Luxury tents in Masai Mara, where wildlife roams nearby.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 900,
+  location: "Masai Mara",
+  country: "Kenya",
+  geometry: { type: "Point", coordinates: [35.143, -1.406] }
+},
+{
+  title: "Forest Camping in Germany",
+  description: "Pitch tents in the mystical Black Forest for a nature escape.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 150,
+  location: "Baden-Württemberg",
+  country: "Germany",
+  geometry: { type: "Point", coordinates: [8.209, 48.077] }
+},
+{
+  title: "Volcano Camping in Guatemala",
+  description: "Camp on the slopes of Acatenango and watch eruptions from Fuego.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1500048993959-dc953a3def71?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 400,
+  location: "Acatenango",
+  country: "Guatemala",
+  geometry: { type: "Point", coordinates: [-90.876, 14.5] }
+},
+
+// -------------------------
+// FARMS (5)
+// -------------------------
+{
+  title: "Tuscan Farmhouse Retreat",
+  description: "Experience rustic charm in a farmhouse surrounded by vineyards and olive groves.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 1200,
+  location: "Tuscany",
+  country: "Italy",
+  geometry: { type: "Point", coordinates: [11.2558, 43.7699] }
+},
+{
+  title: "Lavender Farm Stay in Provence",
+  description: "Sleep among purple lavender fields in southern France with authentic cuisine.",
+  images: {
+    filename: "listingimage",
+    url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=800&q=60"
+  },
+  price: 1400,
+  location: "Pro",
+  country: "France",
+  geometry: { type: "Point", coordinates: [5.0423, 43.9352] }
+},
+
 ];
 
 module.exports = { data: sampleListings };

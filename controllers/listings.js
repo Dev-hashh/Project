@@ -62,13 +62,13 @@ module.exports.createNewListing = async (req, res) => {
 
 module.exports.showListing = async (req, res) => {
   const { id } = req.params;
-  const listing = await Listing.findById(id).populate({path: "reviews", populate: {path: "author",},}).populate("owner"); // Populate reviews and owner for the listing
+  const listing = await Listing.findById(id).populate("owner").populate({path: "reviews", populate: {path: "author",},}); // Populate reviews and owner for the listing
   if (!listing) {
     req.flash('error', 'Listing does not exist!');
     return res.redirect('/listings'); // Redirect to listings index if listing not found
   }
   console.log(listing);
-  res.render('listings/show.ejs', { listing });
+  res.render('listings/show', { listing });
 };
 
 
