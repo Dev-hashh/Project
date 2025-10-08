@@ -1,0 +1,22 @@
+<% layout('/layouts/boylerplate') -%>
+
+    <div class="container text-center mt-5">
+        <h1>✅ Payment Successful!</h1>
+        <p>Your booking has been confirmed.</p>
+
+        <% if (booking) { %>
+            <p><strong>Listing:</strong>
+                <%= booking.listing.title %>
+            </p>
+            <p><strong>Check-in:</strong>
+                <%= booking.checkin.toDateString() %>
+            </p>
+            <p><strong>Check-out:</strong>
+                <%= booking.checkout.toDateString() %>
+            </p>
+            <p><strong>Total Paid:</strong> ₹<%= booking.totalPrice.toLocaleString("en-IN") %>
+            </p>
+        <% } %>
+
+        <a href="/listings" class="btn btn-success mt-3">Go Back to Listings</a>
+    </div>

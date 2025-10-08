@@ -8,6 +8,10 @@ body{
             
 }
 
+.wander_bg{
+    background-color: #fe424d !important;
+    color: white !important;
+}
 /* container */
 .container{
     flex: 1;
@@ -105,9 +109,10 @@ body{
 .show-img{
     height: 45vh
 }
-.edit-btn , .add-btn{
+.edit-btn , .add-btn, .book-btn, .pay-btn{
     background-color: #fe424d !important;
     border: none !important;
+    color:white !important;
 }
 .btns{
     display: flex;

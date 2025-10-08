@@ -4,21 +4,42 @@
     <div class="col-md-8 col-sm-12 offset-md-3 offset-sm-0">
         <h3><%= listing.title %></h3>
     </div>
+
     
+    <div class="card mx-auto my-3" style="max-width: 600px;">
+        <img src="<%= listing.images.url %>" alt="listing image" class="card-img-top mb-2 show-img">
     
-    <div class="card col-sm-12 col-md-6 offset-sm-0 w-sm-full offset-md-3 show-card">
-        <img src="<%= listing.images.url %>" alt="listing image" class="card-img-top mb-1 show-img">
         <div class="card-body">
-            <!-- <p class="card-text">Owned by: <i><%= listing.owner && listing.owner.username ? listing.owner.username : "Unknown" %></i></p> -->
-            <p class="card-text">Owned by: <i>
+            <p class="card-text">
+                <strong>Owned by: </strong>
+                <i>
                     <%= listing.owner.username %>
-                </i></p>
-            <p class="card-text"><%= listing.description %></p>
-            <p class="card-text"><%= listing.price.toLocaleString("en-IN") %></p>
-            <p class="card-text"><%= listing.location %></p>
-            <p class="card-text"><%= listing.country %></p>
+                </i>
+            </p>
+            <p class="card-text">
+                <strong>Description: </strong>
+                <%= listing.description %>
+            </p>
+            <p class="card-text">
+                <strong>Location: </strong>
+                <%= listing.location %>
+            </p>
+            <p class="card-text">
+                <strong>Country: </strong>
+                <%= listing.country %>
+            </p>
+    
+            <div class="d-flex justify-content-between align-items-center mt-3 flex-wrap">
+                <p class="card-text mb-2 mb-md-0">
+                    <strong>Price: </strong>₹ <%= listing.price.toLocaleString("en-IN") %>
+                </p>
+                <form method="GET" action="/listings/<%= listing._id %>/Booking">
+                    <button class="btn pay-btn">Book & Pay</button>
+                </form>
+            </div>
         </div>
     </div>
+
 
     <%- include('../includes/map', { coords: listing.geometry.coordinates, title: listing.title }) %>
 

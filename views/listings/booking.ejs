@@ -1,0 +1,41 @@
+<% layout('/layouts/boylerplate') -%>
+
+    <div class="container mt-5">
+        <h1>Book <%= listing.title %>
+        </h1>
+        <p><strong>Price:</strong> ₹<%= listing.price.toLocaleString("en-IN") %> / night</p>
+
+        <form id="paymentForm">
+            <div class="mb-3">
+                <label for="checkin" class="form-label">Check-in Date</label>
+                <input type="text" id="checkin" name="checkin" class="form-control datepicker" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="checkout" class="form-label">Check-out Date</label>
+                <input type="text" id="checkout" name="checkout" class="form-control datepicker" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Total Price:</label>
+                <p id="totalPrice">₹0</p>
+            </div>
+
+            <button type="submit" class="btn btn-primary pay-btn">Pay Now</button>
+        </form>
+    </div>
+
+    <!-- Your booking logic -->
+    <script>
+        // Pass data from server to JS file safely
+        window.bookingData = {
+            listingId: "<%= listing._id %>",
+            listingTitle: "<%= listing.title %>",
+            pricePerNight: <%= listing.price %>,
+            stripePublicKey: "<%= process.env.STRIPE_PUBLISHABLE_KEY %>"
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/js/booking.js"></script>

@@ -7,7 +7,7 @@ const User = require('../models/user.js'); // import your User model
 
 // MongoDB connection URL from environment variables
 const dbUrl = process.env.ATLASDB_URL;
-const dbUrlLocal = "mongodb://127.000.1:27017/wanderlust";
+
 
 if (!dbUrl) {
     console.warn("⚠️ Warning: ATLASDB_URL not found in .env. Using local DB.");
@@ -15,7 +15,7 @@ if (!dbUrl) {
 
 // Function to connect to MongoDB
 const connectDB = async () => {
-    const connectionUrl =  dbUrl || dbUrlLocal; // Use Atlas if available, else local
+    const connectionUrl =  dbUrl; // Use Atlas if available, else local
     try {
         await mongoose.connect(connectionUrl, { connectTimeoutMS: 30000 });
         console.log(`✅ Connected to MongoDB: ${connectionUrl === dbUrlLocal ? 'Local' : 'Atlas'}`);
@@ -83,4 +83,3 @@ const runSeeder = async () => {
 runSeeder();
 
 
-// (203.81.242.187/32) 

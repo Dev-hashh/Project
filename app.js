@@ -1,14 +1,10 @@
 require('dotenv').config(); // Load environment variables from .env file
 const express = require('express');
 const mongoose = require('mongoose');
-//const Listing = require('./models/listing.js');
 const path = require('path');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
-//const wrapAsync = require('./utils/wrapAsync');
 const ExpressError = require('./utils/ExpressError');
-//const {listingSchema, reviewSchema} = require('./schema.js');
-//const Review = require('./models/review.js');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
@@ -16,14 +12,13 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user.js'); // Import the User model
 
-//const { isLoggedIn, saveRedirectUrl, isOwner, validateListing } = require('./middleware.js');
-
-
 
 const listingRouter = require('./routes/listing.js'); // Import the listings routes
 const reviewRouter = require('./routes/review.js'); // Import the reviews 
 const userRouter = require('./routes/user.js'); // Import the user routes
 const searchRouter  = require('./routes/search');
+const bookingRouter  = require('./routes/booking');
+const paymentRouter  = require('./routes/payment');
 
 const app = express();
 
@@ -78,9 +73,15 @@ const sessionOptions={
 
 
 // Middleware for session and flash messages
-app.use(session(sessionOptions));
+app.use(
+  session({
+    secret: "wcsdfghxjnmsdxnlkmsnx",
+    resave: false,
+    saveUninitialized: true,
+    
+  })
+);
 app.use(flash());
-
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate())); // Use local strategy for authentication
@@ -107,6 +108,9 @@ app.use('/listings', listingRouter); // Use the listings routes
 app.use('/listings/:id/reviews', reviewRouter); // Use the reviews routes
 app.use('/', userRouter); // Use the user routes
 app.use('/search', searchRouter); // Use the search routes
+app.use('/listings/:id/booking', bookingRouter); // Use the booking routes
+app.use('/payment', paymentRouter); // Use the payment routes
+
 
 
 // Catch-all for unmatched routes
@@ -122,6 +126,8 @@ app.use((err, req, res, next) => {
   //res.status(statusCode).send(message);
   res.status(statusCode).render('error.ejs', { message });
 });
+
+
 
 // Start server
 const PORT = process.env.PORT || 3000;
